@@ -1,0 +1,114 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 30% 98%;
+    --foreground: 20 10% 20%;
+    --card: 30 30% 98%;
+    --card-foreground: 20 10% 20%;
+    --popover: 30 30% 98%;
+    --popover-foreground: 20 10% 20%;
+    --primary: 20 14% 22%;
+    --primary-foreground: 30 30% 98%;
+    --secondary: 30 25% 94%;
+    --secondary-foreground: 20 14% 22%;
+    --muted: 30 25% 94%;
+    --muted-foreground: 20 8% 40%;
+    --accent: 26 35% 75%;
+    --accent-foreground: 20 14% 22%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 10% 85%;
+    --input: 20 10% 85%;
+    --ring: 26 35% 75%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 14% 10%;
+    --foreground: 30 10% 95%;
+    --card: 20 14% 15%;
+    --card-foreground: 30 10% 95%;
+    --popover: 20 14% 15%;
+    --popover-foreground: 30 10% 95%;
+    --primary: 30 10% 95%;
+    --primary-foreground: 20 14% 10%;
+    --secondary: 30 10% 20%;
+    --secondary-foreground: 30 10% 95%;
+    --muted: 20 14% 20%;
+    --muted-foreground: 30 10% 65%;
+    --accent: 26 35% 60%;
+    --accent-foreground: 20 14% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 14% 25%;
+    --input: 20 14% 25%;
+    --ring: 26 35% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: linear-gradient(to bottom, rgba(255,252,248,0.8) 0%, rgba(245,240,235,0.5) 100%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-medium tracking-tight;
+  }
+
+  /* Custom utility classes */
+  .premium-card {
+    @apply bg-background backdrop-blur-sm border border-border/40 shadow-sm transition-all duration-300;
+  }
+
+  .premium-card:hover {
+    @apply shadow-md border-accent/20 bg-secondary/5;
+  }
+
+  .premium-button {
+    @apply rounded-none border border-primary bg-primary px-8 py-3 text-primary-foreground shadow-sm transition-colors duration-300 hover:bg-primary/90 hover:shadow-md focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .premium-link {
+    @apply relative inline-block text-foreground after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .premium-glass {
+    @apply bg-background/70 backdrop-blur-sm border border-border/40;
+  }
+  
+  /* Fix for mobile display */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Additional background styles */
+  .bg-gradient-subtle {
+    background-image: linear-gradient(to bottom, rgba(255,252,248,0.8) 0%, rgba(245,240,235,0.5) 100%);
+  }
+  
+  .bg-pattern {
+    background-color: var(--background);
+    background-image: radial-gradient(var(--secondary) 0.5px, transparent 0.5px);
+    background-size: 15px 15px;
+  }
+}
